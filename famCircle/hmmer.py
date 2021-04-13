@@ -77,7 +77,7 @@ class hmmer():
         m1 = hmmsearch + ' --cut_tc --domtblout one.out ' + self.hmmmold + ' ' + self.pep
         if os.path.exists('one.out'):
             os.remove ('one.out')
-        d = os.popen('sudo ' + m1).read().strip()
+        d = os.popen(m1).read().strip()
         # x = input()######################
         list1 = self.readlist('one.out',100)# 第一次筛选
         os.remove ('one.out')
@@ -108,11 +108,11 @@ class hmmer():
         # print(Clustalw_cline)
         m2 = hmmbuild + ' ' + self.newmold + '  out.aln'
         # print(m2)
-        d = os.popen('sudo ' + m2).read().strip()
+        d = os.popen(m2).read().strip()
         # print(m2)
         m3 = hmmsearch + ' --cut_tc --domtblout ' + self.hmmlist + ' ' + self.newmold + ' ' + self.pep
         # x = input()##################
-        d = os.popen('sudo ' + m3).read().strip()
+        d = os.popen(m3).read().strip()
         # print(m3)
         list2 = self.readlist(self.hmmlist,1)# 第二次筛选
         print('Number of gene families: ',len(list2))
