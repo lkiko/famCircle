@@ -4,10 +4,10 @@
 run hmmer 
 pep = pep file
 hmmmold = hmm file
-newmold = hmm file
-comparison = clustal
-savealn = aln file (*.aln)
-hmmlist = genefamily list (*.out)
+comparison = clustal# 比对软件
+newmold = hmm file# 本地生成隐马尔可夫模型
+savealn = aln file (*.aln)# 生成的树文件
+hmmlist = genefamily list (*.out)# 基因家族列表文件
 savefile = family pep
 
 ## ks分布可视化

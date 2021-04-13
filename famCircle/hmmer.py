@@ -32,9 +32,9 @@ class hmmer():
             setattr(self, str(k), v)
             print(k, ' = ', v)
 
-    def readlist(self,value):
+    def readlist(self,filename,value):
         name = []
-        f = open('one.out', 'r', encoding='utf-8')
+        f = open(filename, 'r', encoding='utf-8')
         for row in f:
             if row != '\n' and row[0] != '#':
                 row = row.strip('\n').split()
@@ -79,7 +79,8 @@ class hmmer():
             os.remove ('one.out')
         d = os.popen('sudo ' + m1).read().strip()
         # x = input()######################
-        list1 = self.readlist(100)
+        list1 = self.readlist('one.out',100)# 第一次筛选
+        os.remove ('one.out')
         # print(list1)
         if len(list1) == 0:
             print('No data fit the model')
@@ -101,6 +102,8 @@ class hmmer():
         Clustalw_cline = ClustalwCommandline(cmd = self.clustalw_path, infile=in_file, outfile=out_file, align=True, outorder="ALIGNED", convert=True, output="pir")
         # x = input()
         a, b = Clustalw_cline()
+        os.remove ('one.pep')
+        os.remove ('one.dnd')
         # x = input()
         # print(Clustalw_cline)
         m2 = hmmbuild + ' ' + self.newmold + '  out.aln'
@@ -111,7 +114,7 @@ class hmmer():
         # x = input()##################
         d = os.popen('sudo ' + m3).read().strip()
         # print(m3)
-        list2 = self.readlist(1)
+        list2 = self.readlist(self.hmmlist,1)# 第二次筛选
         print('Number of gene families: ',len(list2))
         peplist = self.readpep()
         if len(peplist) == 0:
