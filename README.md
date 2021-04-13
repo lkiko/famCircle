@@ -5,10 +5,13 @@ run hmmer
 pep = pep file
 hmmmold = hmm file
 comparison = clustal# 比对软件
+e_value1 = value1# e值筛选
+e_value2 = value2
+structure_field = True/False# 结构域筛选
 newmold = hmm file# 本地生成隐马尔可夫模型
 savealn = aln file (*.aln)# 生成的树文件
-hmmlist = genefamily list (*.out)# 基因家族列表文件
 savefile = family pep
+hmmlist = genefamily list (*.out)# 基因家族列表文件
 
 ## ks分布可视化
 run lookKs

@@ -79,7 +79,7 @@ class hmmer():
             os.remove ('one.out')
         d = os.popen(m1).read().strip()
         # x = input()######################
-        list1 = self.readlist('one.out',100)# 第一次筛选
+        list1 = self.readlist('one.out',self.e_value1)# 第一次筛选
         os.remove ('one.out')
         # print(list1)
         if len(list1) == 0:
@@ -114,7 +114,7 @@ class hmmer():
         # x = input()##################
         d = os.popen(m3).read().strip()
         # print(m3)
-        list2 = self.readlist(self.hmmlist,1)# 第二次筛选
+        list2 = self.readlist(self.hmmlist,self.e_value2)# 第二次筛选
         print('Number of gene families: ',len(list2))
         peplist = self.readpep()
         if len(peplist) == 0:
