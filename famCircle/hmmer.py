@@ -65,16 +65,17 @@ class hmmer():
         return peplist
 
     def writepep(self,name,seq,file):
-        f = open(file, 'a+', encoding='utf-8')
+        f = open('./out_pep/' + file, 'a+', encoding='utf-8')
         f.write(name + '\n')
         f.write(seq)
         f.close()
 
-    def run(self):
-        hmmer = '/usr/bin/'
+    def runhmm(self, hmmmold, path):
+    	names = hmmmold[:-4]
+        hmmer = self.hmmer_path
         hmmsearch = hmmer + 'hmmsearch'
         hmmbuild = hmmer + 'hmmbuild'
-        m1 = hmmsearch + ' --cut_tc --domtblout one.out ' + self.hmmmold + ' ' + self.pep
+        m1 = hmmsearch + ' --cut_tc --domtblout one.out ' + path + '/' + hmmmold + ' ' + self.pep
         if os.path.exists('one.out'):
             os.remove ('one.out')
         d = os.popen(m1).read().strip()
@@ -96,9 +97,9 @@ class hmmer():
                 pass
         # Clustalw = '/usr/bin/clustalw'
         in_file = 'one.pep'
-        if os.path.exists('out.aln'):
-            os.remove ('out.aln')
-        out_file = 'out.aln'
+        # if os.path.exists(name + 'out.aln'):
+        #     os.remove (name + 'out.aln')
+        out_file ='./out_aln/' + names + '.aln'
         Clustalw_cline = ClustalwCommandline(cmd = self.clustalw_path, infile=in_file, outfile=out_file, align=True, outorder="ALIGNED", convert=True, output="pir")
         # x = input()
         a, b = Clustalw_cline()
@@ -106,15 +107,15 @@ class hmmer():
         os.remove ('one.dnd')
         # x = input()
         # print(Clustalw_cline)
-        m2 = hmmbuild + ' ' + self.newmold + '  out.aln'
+        m2 = hmmbuild + ' ./out_hmm/' + names + '.hmm ./out_aln/' + names + '.aln'
         # print(m2)
         d = os.popen(m2).read().strip()
         # print(m2)
-        m3 = hmmsearch + ' --cut_tc --domtblout ' + self.hmmlist + ' ' + self.newmold + ' ' + self.pep
+        m3 = hmmsearch + ' --cut_tc --domtblout ./out_list/' + names + '.out ./out_hmm/' + names + '.hmm ' + self.pep
         # x = input()##################
         d = os.popen(m3).read().strip()
         # print(m3)
-        list2 = self.readlist(self.hmmlist,self.e_value2)# 第二次筛选
+        list2 = self.readlist(hmmlist,self.e_value2)# 第二次筛选
         print('Number of gene families: ',len(list2))
         peplist = self.readpep()
         if len(peplist) == 0:
@@ -123,7 +124,38 @@ class hmmer():
         for i in list2:
             if i in peplist.keys():
                 seq = peplist[i]
-                file = self.savefile
+                file = names + '.pep'
                 self.writepep(i, seq, file)
             else:
                 pass
+    def changefile(file,list, hmmpath):
+        for i in list:
+            name = str(i)[:-4] + 'hmm'
+            d = os.popen("hmmbuild %s/%s %s/%s" % (hmmpath, name, hmmpath, i)).read().strip()
+            list = [name if i1 == i else i1 for i1 in list]
+        return list
+
+    def readpwd(self, path):
+        filelist = []
+        path_list=os.listdir(path)
+        path_list.sort() #对读取的路径进行排序
+        for filename in path_list:
+            name = os.path.join(path,filename)
+            print(name)
+            filelist.append(name)
+        return filelist
+    def run():
+        if os.path.isdir('./out_hmm') and os.path.isdir('./out_pep') and os.path.isdir('./out_list'):
+            d = os.popen("mkdir out_hmm").read().strip()
+            d = os.popen("mkdir out_pep").read().strip()
+            d = os.popen("mkdir out_list").read().strip()
+        hmmpath = self.hmmmoldpath
+        hmmlistname = self.readpwd(hmmpath)
+        if self.format_conversion:
+            hmmlistname = self.changefile(hmmlistname, hmmpath)
+        else:
+            pass
+        for i in hmmlistname:# 遍历模型文件
+        	self.runhmm(i, hmmpath)
+            
+
