@@ -1,5 +1,23 @@
 # famCircle 基因家族分析，tandem可视化分析
 
+## 分析流程
+
+基因组下载以及处理
+	路线1：
+		ks展示
+		hmmer搜索筛选
+			断开处：
+				pfam结构域筛选
+				α/β筛选
+		主程序选择：
+			inner
+			outer
+	路线2：
+		blast、共线性文件筛选
+		主程序选择：
+			inner
+			outer
+
 ## 基因家族查找
 run hmmer 
 pep = pep file
