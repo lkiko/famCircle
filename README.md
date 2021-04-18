@@ -22,8 +22,7 @@
 run lookKs
 ks = ks file
 Ks_concern = 0,0.15
-peripheral = False
-bridge = 1
+step_size = 0.05
 savefile = save file (*.png, *.pdf)
 
 ## 基因家族查找
