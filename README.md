@@ -18,25 +18,22 @@
 			inner
 			outer
 
-## 基因家族查找
-run hmmer 
-pep = pep file
-hmmmold = hmm file
-comparison = clustal# 比对软件
-e_value1 = value1# e值筛选
-e_value2 = value2
-structure_field = True/False# 结构域筛选
-newmold = hmm file# 本地生成隐马尔可夫模型
-savealn = aln file (*.aln)# 生成的树文件
-savefile = family pep
-hmmlist = genefamily list (*.out)# 基因家族列表文件
-
 ## ks分布可视化
 ks = ks file
 ks_concern = min,max
 step_size = 0.05
 model = YN00
 savefile = save file (*.png, *.pdf)
+
+## 基因家族查找
+run hmmer 
+pep = pep file# 蛋白质文件
+hmmmoldpath = hmm file# 模型地址
+format_conversion = Fales# 格式转换
+comparison = clustal# 比对软件
+e_value1 = value1
+e_value2 = value2
+structure_field = False# 结构域
 
 ## 内卷型的tandem可视化
 run inner
