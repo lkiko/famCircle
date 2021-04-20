@@ -18,13 +18,6 @@
 			inner
 			outer
 
-## ks分布可视化
-run lookKs
-ks = ks file
-Ks_concern = 0,0.15
-step_size = 0.05
-savefile = save file (*.png, *.pdf)
-
 ## 基因家族查找
 run hmmer 
 pep = pep file
@@ -38,6 +31,12 @@ savealn = aln file (*.aln)# 生成的树文件
 savefile = family pep
 hmmlist = genefamily list (*.out)# 基因家族列表文件
 
+## ks分布可视化
+ks = ks file
+ks_concern = min,max
+step_size = 0.05
+model = YN00
+savefile = save file (*.png, *.pdf)
 
 ## 内卷型的tandem可视化
 run inner
