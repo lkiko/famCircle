@@ -22,7 +22,7 @@
 ks = ks file
 ks_concern = min,max
 step_size = 0.05
-model = YN00
+model = YN00/NG86
 savefile = save file (*.png, *.pdf)
 
 ## 基因家族查找
@@ -30,7 +30,7 @@ run hmmer
 pep = pep file# 蛋白质文件
 hmmmoldpath = hmm file# 模型地址
 format_conversion = Fales# 格式转换
-comparison = clustal# 比对软件
+comparison = muscle/mafft/clustal# 比对软件
 e_value1 = value1
 e_value2 = value2
 structure_field = False# 结构域
