@@ -19,10 +19,19 @@
 			outer
 
 ## ks分布可视化
+run ks
 ks = ks file
 ks_concern = min,max
 step_size = 0.05
 model = YN00/NG86
+savefile = save file (*.png, *.pdf)
+
+run screen
+domainpath = domain file
+lens = lens file
+gff = gff file
+chrolist = Genome name
+radius = 0.33
 savefile = save file (*.png, *.pdf)
 
 ## 基因家族查找
@@ -60,6 +69,7 @@ chrolist = Genome name
 ks = ks file
 genepairs = genepairs file
 peripheral = False
+block = 6
 Ks_concern = 0,0.15
 bridge = 1
 radius = 0.3
