@@ -21,8 +21,8 @@
 ## ks分布可视化
 run ks
 ks = ks file
-ks_concern = min,max
-step_size = 0.05
+vertical = False
+bins = 100
 model = YN00/NG86
 savefile = save file (*.png, *.pdf)
 
