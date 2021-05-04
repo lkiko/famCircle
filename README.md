@@ -26,13 +26,14 @@ step_size = 0.05
 model = YN00/NG86
 savefile = save file (*.png, *.pdf)
 
+## 结构域分布情况
 run screen
 domainpath = domain file
 lens = lens file
 gff = gff file
 chrolist = Genome name
-radius = 0.33
-savefile = save file (*.png, *.pdf)
+series = 25
+outpath = out file
 
 ## 基因家族查找
 run hmmer 
