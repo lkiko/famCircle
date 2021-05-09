@@ -18,12 +18,23 @@
 			inner
 			outer
 
-## ks分布可视化
+## 总体ks分布可视化
 run ks
 ks = ks file
 vertical = False
 bins = 100
 model = YN00/NG86
+savefile = save file (*.png, *.pdf)
+
+## 基因块ks分布可视化
+run Ks_allocation
+ks = ks file
+area = 0,2
+vertical = False
+model = YN00/NG86
+blockfile = block file
+blocklength = 6
+pvalue = 0.05
 savefile = save file (*.png, *.pdf)
 
 ## 结构域分布情况
