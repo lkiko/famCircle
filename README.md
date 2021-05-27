@@ -98,7 +98,7 @@ radius = 0.3
 peripheral = False
 savecsv = outer file (*.csv)
 savefile = save file (*.png, *.pdf)
-
+![内卷型的可视化](https://images.gitee.com/uploads/images/2021/0527/130903_4f70818b_8074509.png "ath_ath.collinearity.ks.inner.png")
 ## 放射型的tandem可视化
 run outer
 lens = lens file
@@ -114,3 +114,4 @@ bridge = 1# 跨区域连线参数可调
 radius = 0.3
 savecsv = outer file (*.csv)
 savefile = save file (*.png, *.pdf)
+![放射型的可视化](https://images.gitee.com/uploads/images/2021/0527/130928_eada2fd4_8074509.png "ath_ath.collinearity.ks.outerx.png")
