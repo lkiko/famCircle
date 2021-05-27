@@ -21,6 +21,7 @@
 			outer
 				typing 数据格式化
 				outer绘图
+![流程图](https://images.gitee.com/uploads/images/2021/0527/132433_7110a5e1_8074509.jpeg "famCircle.jpg")
 
 # 配置文件解释
 
