@@ -31,7 +31,7 @@ vertical = False
 bins = 100
 model = YN00/NG86
 savefile = save file (*.png, *.pdf)
-
+![总体ks可视化](https://images.gitee.com/uploads/images/2021/0527/124033_bf2d774c_8074509.png "ath_ath.ks.png")
 ## 基因块ks分布可视化
 run Ks_allocation
 ks = ks file
@@ -42,7 +42,7 @@ blockfile = block file
 blocklength = 6
 pvalue = 0.05
 savefile = save file (*.png, *.pdf)
-
+![block共线区域ks可视化](https://images.gitee.com/uploads/images/2021/0527/124112_ab4979f0_8074509.png "ath_ath.collinearity.ks.png")
 ## 共线性可视化
 run circle
 lens = lens file
@@ -56,7 +56,7 @@ Ks_concern = 0,0.15
 bridge = 1
 radius = 0.3
 savefile = save file (*.png, *.pdf)
-
+![共线性可视化](https://images.gitee.com/uploads/images/2021/0527/125433_e3132d9f_8074509.png "ath_ath.collinearityx.png")
 ## 基因家族查找
 run hmmer 
 pep = pep file# 蛋白质文件
@@ -77,7 +77,7 @@ gff = gff file
 chrolist = Genome name
 series = 25# 串联数
 outpath = out file path
-
+![各结构域在染色体上的分布](https://images.gitee.com/uploads/images/2021/0527/125012_357344ee_8074509.png "ath1x.png")
 ## 文件格式化
 run typing
 domainpath = domain file# 文件路径
