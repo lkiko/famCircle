@@ -57,7 +57,6 @@ savecsv = save csv# 筛选结果文件
 savefile = save file (*.png, *.pdf)# 筛选结果可视化
 例：![test:拟南芥基因块ks数据分布block长度为10+](https://images.gitee.com/uploads/images/2021/0717/125847_77aaf58a_8074509.png "test.collinearity.ks.block.png")
 
-
 ## 基因组共线性展示
 [circle_all]
 lens = lens file# 染色体文件
@@ -66,7 +65,7 @@ species_list = Genome name# 物种列表例如：ath,vvi
 blockfile = block file# 共线性文件
 radius = 0.3# 半径
 savefile = save file (*.png, *.pdf)# 共线性展示图
-例：
+例：![test:拟南芥基因组共线性展示](https://images.gitee.com/uploads/images/2021/0717/135043_4acd1719_8074509.png "test.collinearity.circle.all.png")
 
 ## 局部基因共线性展示
 [line]
@@ -90,7 +89,7 @@ genepairs = genepairs file# 共线性文件
 block = 6# block长度控制参数
 radius = 0.45# 半径
 savefile = save file (*.png, *.pdf)# ks共线性展示图
-例：
+例：![test:拟南芥ks共线性可视化](https://images.gitee.com/uploads/images/2021/0717/135435_0c4f7f81_8074509.png "test.collinearity.circle.png")
 
 ## 基因家族查找
 [hmmer]
@@ -114,7 +113,6 @@ chrolist = Genome name# 物种列表例如：ath,vvi
 series = 25# 串联数
 outpath = out file# 可视化结果储存路径
 例：![test:拟南芥1号染色体部分结构域分布情况](https://images.gitee.com/uploads/images/2021/0717/131138_a2661e2b_8074509.png "ath1.png")
-
 
 ## 文件格式化
 [typing]
@@ -152,7 +150,7 @@ clusters = True# ks区间内分段展示
 peripheral = False# 外围ks展示
 savecsv = outer file (*.csv)# 筛选结果储存文件
 savefile = save file (*.png, *.pdf)# 筛选结果可视化
-例：
+例：![test:拟南芥部分结构域tandem展示](https://images.gitee.com/uploads/images/2021/0717/135152_5bdfd054_8074509.png "test.outer.png")
 
 ## 局部tandem展示
 [part]
