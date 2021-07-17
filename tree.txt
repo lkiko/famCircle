@@ -1,63 +1,87 @@
-./LICENSE [error opening dir]
-./README.md [error opening dir]
-./build
-├── bdist.win-amd64
-└── lib
-    └── famCircle
-        ├── Ks_allocation.py
-        ├── __init__.py
-        ├── bez.py
-        ├── circle.py
-        ├── conf.ini
-        ├── example
-        │   ├── Ks_allocation.conf
-        │   ├── __init__.py
-        │   ├── circle.conf
-        │   ├── hmmer.conf
-        │   ├── inner.conf
-        │   ├── outer.conf
-        │   ├── screen.conf
-        │   └── typing.conf
-        ├── hmmer.py
-        ├── inner.py
-        ├── outer.py
-        ├── run.py
-        ├── screen.py
-        └── typing.py
-./dist
-├── famCircle-0.1.5-py3-none-any.whl
-└── famCircle-0.1.5.tar.gz
-./famCircle
-├── Ks_allocation.py
-├── __init__.py
-├── __pycache__
-│   └── bez.cpython-38.pyc
-├── bez.py
-├── circle.py
-├── conf.ini
-├── example
-│   ├── Ks_allocation.conf
+.
+├── LICENSE
+├── README.md
+├── build
+│   ├── bdist.win-amd64
+│   └── lib
+│       └── famCircle
+│           ├── Ks.py
+│           ├── Ks_allocation.py
+│           ├── Ks_block.py
+│           ├── __init__.py
+│           ├── bez.py
+│           ├── circle.py
+│           ├── circle_all.py
+│           ├── conf.ini
+│           ├── example
+│           │   ├── Ks.conf
+│           │   ├── Ks_allocation.conf
+│           │   ├── Ks_block.conf
+│           │   ├── __init__.py
+│           │   ├── circle.conf
+│           │   ├── circle_all.conf
+│           │   ├── hmmer.conf
+│           │   ├── inner.conf
+│           │   ├── line.conf
+│           │   ├── outer.conf
+│           │   ├── part.conf
+│           │   ├── screen.conf
+│           │   └── typing.conf
+│           ├── hmmer.py
+│           ├── inner.py
+│           ├── line.py
+│           ├── outer.py
+│           ├── part.py
+│           ├── run.py
+│           ├── screen.py
+│           └── typing.py
+├── dist
+│   ├── famCircle-0.1.7-py3-none-any.whl
+│   └── famCircle-0.1.7.tar.gz
+├── famCircle
+│   ├── Ks.py
+│   ├── Ks_allocation.py
+│   ├── Ks_block.py
 │   ├── __init__.py
-│   ├── circle.conf
-│   ├── hmmer.conf
-│   ├── inner.conf
-│   ├── outer.conf
-│   ├── screen.conf
-│   └── typing.conf
-├── hmmer.py
-├── inner.py
-├── outer.py
-├── run.py
-├── screen.py
-└── typing.py
-./famCircle.egg-info
-├── PKG-INFO
-├── SOURCES.txt
-├── dependency_links.txt
-├── entry_points.txt
-├── requires.txt
-├── top_level.txt
-└── zip-safe
-./setup.py [error opening dir]
+│   ├── __pycache__
+│   │   └── bez.cpython-38.pyc
+│   ├── bez.py
+│   ├── circle.py
+│   ├── circle_all.py
+│   ├── conf.ini
+│   ├── example
+│   │   ├── Ks.conf
+│   │   ├── Ks_allocation.conf
+│   │   ├── Ks_block.conf
+│   │   ├── __init__.py
+│   │   ├── circle.conf
+│   │   ├── circle_all.conf
+│   │   ├── hmmer.conf
+│   │   ├── inner.conf
+│   │   ├── line.conf
+│   │   ├── outer.conf
+│   │   ├── part.conf
+│   │   ├── screen.conf
+│   │   └── typing.conf
+│   ├── hmmer.py
+│   ├── inner.py
+│   ├── line.py
+│   ├── outer.py
+│   ├── part.py
+│   ├── run.py
+│   ├── screen.py
+│   └── typing.py
+├── famCircle.egg-info
+│   ├── PKG-INFO
+│   ├── SOURCES.txt
+│   ├── dependency_links.txt
+│   ├── entry_points.txt
+│   ├── requires.txt
+│   ├── top_level.txt
+│   └── zip-safe
+├── famCircle.emmx
+├── famCircle.png
+├── setup.py
+└── tree.txt
 
-6 directories, 48 files
+10 directories, 74 files

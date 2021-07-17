@@ -9,6 +9,7 @@
 			全基因组 ks展示
 			block ks展示
 		circle全基因组共线性展示
+		line局部共线性绘制
 		hmmer 隐马尔可夫模型搜索筛选
 		screen tandem数量分部
 			断开处：
@@ -21,7 +22,7 @@
 			outer
 				typing 数据格式化
 				outer绘图
-![流程图](https://images.gitee.com/uploads/images/2021/0527/132433_7110a5e1_8074509.jpeg "famCircle.jpg")
+		part局部tandem绘制
 
 # 配置文件解释
 
@@ -32,7 +33,7 @@ vertical = False
 bins = 100
 model = YN00/NG86
 savefile = save file (*.png, *.pdf)
-![总体ks可视化](https://images.gitee.com/uploads/images/2021/0527/124033_bf2d774c_8074509.png "ath_ath.ks.png")
+
 ## 基因块ks分布可视化
 run Ks_allocation
 ks = ks file
@@ -43,7 +44,7 @@ blockfile = block file
 blocklength = 6
 pvalue = 0.05
 savefile = save file (*.png, *.pdf)
-![block共线区域ks可视化](https://images.gitee.com/uploads/images/2021/0527/124112_ab4979f0_8074509.png "ath_ath.collinearity.ks.png")
+
 ## 共线性可视化
 run circle
 lens = lens file
@@ -57,7 +58,7 @@ Ks_concern = 0,0.15
 bridge = 1
 radius = 0.3
 savefile = save file (*.png, *.pdf)
-![共线性可视化](https://images.gitee.com/uploads/images/2021/0527/125433_e3132d9f_8074509.png "ath_ath.collinearityx.png")
+
 ## 基因家族查找
 run hmmer 
 pep = pep file# 蛋白质文件
@@ -78,7 +79,7 @@ gff = gff file
 chrolist = Genome name
 series = 25# 串联数
 outpath = out file path
-![各结构域在染色体上的分布](https://images.gitee.com/uploads/images/2021/0527/125012_357344ee_8074509.png "ath1x.png")
+
 ## 文件格式化
 run typing
 domainpath = domain file# 文件路径
@@ -99,7 +100,7 @@ radius = 0.3
 peripheral = False
 savecsv = outer file (*.csv)
 savefile = save file (*.png, *.pdf)
-![内卷型的可视化](https://images.gitee.com/uploads/images/2021/0527/130903_4f70818b_8074509.png "ath_ath.collinearity.ks.inner.png")
+
 ## 放射型的tandem可视化
 run outer
 lens = lens file
@@ -115,4 +116,135 @@ bridge = 1# 跨区域连线参数可调
 radius = 0.3
 savecsv = outer file (*.csv)
 savefile = save file (*.png, *.pdf)
-![放射型的可视化](https://images.gitee.com/uploads/images/2021/0527/130928_eada2fd4_8074509.png "ath_ath.collinearity.ks.outerx.png")
+
+
+[circle]
+lens = lens file
+gff = gff file
+species_list = Genome name
+ks = ks file
+genepairs = genepairs file
+block = 6
+radius = 0.45
+savefile = save file (*.png, *.pdf)
+
+
+[circle_all]
+lens = lens file
+gff = gff file
+species_list = Genome name
+blockfile = block file
+radius = 0.3
+savefile = save file (*.png, *.pdf)
+
+
+[hmmer]
+pep = pep file
+cds = cds file
+hmmmoldpath = hmm file
+format_conversion = Fales
+comparison = clustal
+e_value1 = value1
+e_value2 = value2
+
+
+[inner]
+lens = lens file
+gff = gff file
+chrolist = Genome name
+ks = ks file
+genefamily = famliy file
+Ks_concern = 0,1.5
+radius = 0.3
+space = 0.005
+clusters = True
+peripheral = False
+savecsv = outer file (*.csv)
+savefile = save file (*.png, *.pdf)
+
+
+
+
+[Ks]
+cds_file = 	cds file
+pep_file = 	pep file
+align_software = muscle
+pairs_file = gene pairs file
+ks_file = ks result
+
+
+[Ks_allocation]
+ks = ks file
+species_list = specise name
+area = 0,2.5
+model = YN00/NG86
+savefile = save file (*.png, *.pdf)
+
+
+[Ks_block]
+species_list = specise name
+ks = ks file
+area = 0,2.5
+model = YN00/NG86
+blockfile = block file
+blocklength = 6
+pvalue = 1e-5
+savecsv = save csv
+savefile = save file (*.png, *.pdf)
+
+
+[line]
+pairs_file = pairs file
+gff1 =  gff1 file
+gff2 =  gff2 file
+lens1 = lens1 file
+lens2 = lens2 file
+chr1_name =  chr1 name
+chr2_name =  chr2 name
+savefile = savefile(.png,.pdf)
+
+
+[outer]
+lens = lens file
+gff = gff file
+chrolist = Genome name
+ks = ks file
+genefamily = famliy file
+Ks_concern = 0,0.15
+radius = 0.3
+space = 0.005
+clusters = True
+peripheral = False
+savecsv = outer file (*.csv)
+savefile = save file (*.png, *.pdf)
+
+
+[part]
+lens = lens file
+gff = gff file
+chrolist = Genome name
+ks = ks file
+genefamily = famliy file
+Ks_concern = 0,1.5
+radius = 0.3
+space = 0.005
+clusters = True
+peripheral = False
+savecsv = outer file (*.csv)
+savefile = save file (*.png, *.pdf)
+
+
+
+[screen]
+domainpath = domain file
+lens = lens file
+gff = gff file
+chrolist = Genome name
+series = 25
+outpath = out file
+
+
+[typing]
+domainpath = domain file
+domainlist = Genome name
+savefile = out file
