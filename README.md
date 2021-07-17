@@ -1,7 +1,7 @@
 # famCircle 基因家族分析，tandem可视化分析
 
 ## 分析流程
-
+![分析流程图](https://images.gitee.com/uploads/images/2021/0717/124804_dc342bac_8074509.png "famCircle.png")
 基因组下载以及处理
 	路线：
 		前期处理序列比对、共线性扫描、ks计算
@@ -26,42 +26,76 @@
 
 # 配置文件解释
 
-## 总体ks分布可视化
-run ks
-ks = ks file
-vertical = False
-bins = 100
-model = YN00/NG86
-savefile = save file (*.png, *.pdf)
 
-## 基因块ks分布可视化
-run Ks_allocation
-ks = ks file
-area = 0,2
-vertical = False
-model = YN00/NG86
-blockfile = block file
-blocklength = 6
-pvalue = 0.05
-savefile = save file (*.png, *.pdf)
+## 计算ks
+[Ks]
+cds_file = 	cds file# 基因组cds文件
+pep_file = 	pep file# 基因组蛋白质文件(可选)
+align_software = muscle# 比对软件
+pairs_file = gene pairs file# 共线性文件
+ks_file = ks result# 输出文件
 
-## 共线性可视化
-run circle
-lens = lens file
-gff = gff file
-chrolist = Genome name
-ks = ks file
-genepairs = genepairs file
-peripheral = False
-block = 6
-Ks_concern = 0,0.15
-bridge = 1
-radius = 0.3
-savefile = save file (*.png, *.pdf)
+## 全基因组ks数据分布
+[Ks_allocation]
+ks = ks file# ks文件
+species_list = specise name# 物种列表例如：ath,vvi
+area = 0,2.5# ks绘制区间
+model = YN00/NG86# 绘制ks来源
+savefile = save file (*.png, *.pdf)# 输出图片
+例：![test:拟南芥ks数据分布](https://images.gitee.com/uploads/images/2021/0717/125414_357dd5c8_8074509.png "test.collinearity.ks.all.png")
+
+## 基因块ks数据分布图
+[Ks_block]
+species_list = specise name# 物种列表例如：ath,vvi
+ks = ks file# ks文件
+area = 0,2.5# ks绘制区间
+model = YN00/NG86# 绘制ks来源
+blockfile = block file# 共线性文件
+blocklength = 6# block长度控制参数
+pvalue = 1e-5# block阈值控制参数
+savecsv = save csv# 筛选结果文件
+savefile = save file (*.png, *.pdf)# 筛选结果可视化
+例：![test:拟南芥基因块ks数据分布block长度为10+](https://images.gitee.com/uploads/images/2021/0717/125847_77aaf58a_8074509.png "test.collinearity.ks.block.png")
+
+
+## 基因组共线性展示
+[circle_all]
+lens = lens file# 染色体文件
+gff = gff file# 基因注释文件
+species_list = Genome name# 物种列表例如：ath,vvi
+blockfile = block file# 共线性文件
+radius = 0.3# 半径
+savefile = save file (*.png, *.pdf)# 共线性展示图
+例：
+
+## 局部基因共线性展示
+[line]
+pairs_file = pairs file# 共线性文件
+gff1 =  gff1 file# 基因注释文件
+gff2 =  gff2 file# 基因注释文件
+lens1 = lens1 file# 染色体文件
+lens2 = lens2 file# 染色体文件
+chr1_name =  chr1 name# 展示染色体1
+chr2_name =  chr2 name# 展示染色体2
+savefile = savefile(.png,.pdf)# 局部共线性展示结果
+例：![test:拟南芥2号和3号染色体间共线性展示](https://images.gitee.com/uploads/images/2021/0717/131629_dd9e4e79_8074509.png "test.line.png")
+
+## 结合ks的共线性展示
+[circle]
+lens = lens file# 染色体文件
+gff = gff file# 基因注释文件
+species_list = Genome name# 物种列表例如：ath,vvi
+ks = ks file# ks文件
+genepairs = genepairs file# 共线性文件
+block = 6# block长度控制参数
+radius = 0.45# 半径
+savefile = save file (*.png, *.pdf)# ks共线性展示图
+例：
 
 ## 基因家族查找
-run hmmer 
+[hmmer]
 pep = pep file# 蛋白质文件
+cds = cds file# 核酸文件(可选)
 hmmmoldpath = hmm file# 模型地址
 format_conversion = Fales# 格式转换
 comparison = muscle/clustal# 比对软件
@@ -72,179 +106,64 @@ e_value2 = value2# 复筛阈值
 ## α/β筛选
 
 ## 结构域分布情况
-run screen
-domainpath = domain file path
-lens = lens file
-gff = gff file
-chrolist = Genome name
+[screen]
+domainpath = domain file path# 结构域搜索结果储存路径
+lens = lens file# 染色体文件
+gff = gff file# 基因注释文件
+chrolist = Genome name# 物种列表例如：ath,vvi
 series = 25# 串联数
-outpath = out file path
+outpath = out file# 可视化结果储存路径
+例：![test:拟南芥1号染色体部分结构域分布情况](https://images.gitee.com/uploads/images/2021/0717/131138_a2661e2b_8074509.png "ath1.png")
+
 
 ## 文件格式化
-run typing
-domainpath = domain file# 文件路径
-domainlist = Genome name# 文件名列表
-position = inner/outer# 目标程序格式
+[typing]
+domainpath = domain file# 结构域搜索结果储存路径
+domainlist = Genome name# 需要格式化的结构域搜索结果
 savefile = out file# 保存文件
 
 ## 内卷型的tandem可视化
-run inner
-lens = lens file
-gff = gff file
-chrolist = Genome name
-ks = ks file
-genefamily = famliy file
-Ks_concern = 0.1,0.2,1.4,1.5# ks分割参数可调
-bridge = 0.05# 最远连接
-radius = 0.3
-peripheral = False
-savecsv = outer file (*.csv)
-savefile = save file (*.png, *.pdf)
+[inner]
+lens = lens file# 染色体文件
+gff = gff file# 基因注释文件
+chrolist = Genome name# 物种列表例如：ath,vvi
+ks = ks file# ks文件
+genefamily = famliy file# typing格式化的基因家族文件
+Ks_concern = 0,1.5# ks区间
+radius = 0.3# 半径
+space = 0.005# tandem基因间距
+clusters = True# ks区间内分段展示
+peripheral = False# 外围ks展示
+savecsv = outer file (*.csv)# 筛选结果储存文件
+savefile = save file (*.png, *.pdf)# 筛选结果可视化
+例：![test:拟南芥部分结构域tandem展示](https://images.gitee.com/uploads/images/2021/0717/132312_93086faa_8074509.png "test.inner.png")
 
 ## 放射型的tandem可视化
-run outer
-lens = lens file
-gff = gff file
-chrolist = Genome name
-ks = ks file
-genepairs = genepairs file
-Ks_concern = 0,0.15# ks分割参数可调
-series = 25# 串联数
-clusters = None# 集团参数可调
-peripheral = False
-bridge = 1# 跨区域连线参数可调
-radius = 0.3
-savecsv = outer file (*.csv)
-savefile = save file (*.png, *.pdf)
-
-
-[circle]
-lens = lens file
-gff = gff file
-species_list = Genome name
-ks = ks file
-genepairs = genepairs file
-block = 6
-radius = 0.45
-savefile = save file (*.png, *.pdf)
-
-
-[circle_all]
-lens = lens file
-gff = gff file
-species_list = Genome name
-blockfile = block file
-radius = 0.3
-savefile = save file (*.png, *.pdf)
-
-
-[hmmer]
-pep = pep file
-cds = cds file
-hmmmoldpath = hmm file
-format_conversion = Fales
-comparison = clustal
-e_value1 = value1
-e_value2 = value2
-
-
-[inner]
-lens = lens file
-gff = gff file
-chrolist = Genome name
-ks = ks file
-genefamily = famliy file
-Ks_concern = 0,1.5
-radius = 0.3
-space = 0.005
-clusters = True
-peripheral = False
-savecsv = outer file (*.csv)
-savefile = save file (*.png, *.pdf)
-
-
-
-
-[Ks]
-cds_file = 	cds file
-pep_file = 	pep file
-align_software = muscle
-pairs_file = gene pairs file
-ks_file = ks result
-
-
-[Ks_allocation]
-ks = ks file
-species_list = specise name
-area = 0,2.5
-model = YN00/NG86
-savefile = save file (*.png, *.pdf)
-
-
-[Ks_block]
-species_list = specise name
-ks = ks file
-area = 0,2.5
-model = YN00/NG86
-blockfile = block file
-blocklength = 6
-pvalue = 1e-5
-savecsv = save csv
-savefile = save file (*.png, *.pdf)
-
-
-[line]
-pairs_file = pairs file
-gff1 =  gff1 file
-gff2 =  gff2 file
-lens1 = lens1 file
-lens2 = lens2 file
-chr1_name =  chr1 name
-chr2_name =  chr2 name
-savefile = savefile(.png,.pdf)
-
-
 [outer]
-lens = lens file
-gff = gff file
-chrolist = Genome name
-ks = ks file
-genefamily = famliy file
-Ks_concern = 0,0.15
-radius = 0.3
-space = 0.005
-clusters = True
-peripheral = False
-savecsv = outer file (*.csv)
-savefile = save file (*.png, *.pdf)
+lens = lens file# 染色体文件
+gff = gff file# 基因注释文件
+chrolist = Genome name# 物种列表例如：ath,vvi
+ks = ks file# ks文件
+genefamily = famliy file# typing格式化的基因家族文件
+Ks_concern = 0,0.15# ks区间
+radius = 0.3# 半径
+space = 0.005# tandem基因间距
+clusters = True# ks区间内分段展示
+peripheral = False# 外围ks展示
+savecsv = outer file (*.csv)# 筛选结果储存文件
+savefile = save file (*.png, *.pdf)# 筛选结果可视化
+例：
 
-
+## 局部tandem展示
 [part]
-lens = lens file
-gff = gff file
-chrolist = Genome name
-ks = ks file
-genefamily = famliy file
-Ks_concern = 0,1.5
-radius = 0.3
-space = 0.005
-clusters = True
-peripheral = False
-savecsv = outer file (*.csv)
-savefile = save file (*.png, *.pdf)
+lens = lens file# 染色体文件
+gff = gff file# 基因注释文件
+chro_name = chro name# 展示染色体
+genefamily = genefamily file# typing格式化的基因家族文件
+pairs_file = pairs file# inner/outer筛选结果储存文件
+interval = 0,9000# 展示基因范围
+space = 0.005# tandem基因间距
+clusters = True# ks区间内分段展示
+savefile = save file (*.png, *.pdf)# 筛选结果可视化
+例：![test:拟南芥2号染色体部分结构域的tandem展示](https://images.gitee.com/uploads/images/2021/0717/133034_2af62f7f_8074509.png "test.part.png")
 
-
-
-[screen]
-domainpath = domain file
-lens = lens file
-gff = gff file
-chrolist = Genome name
-series = 25
-outpath = out file
-
-
-[typing]
-domainpath = domain file
-domainlist = Genome name
-savefile = out file
