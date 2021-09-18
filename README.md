@@ -25,6 +25,56 @@
 >>>circle全基因组共线性展示  
 >>>line局部共线性绘制  
 
+# 软件安装与使用
+## 下载安装
+### 从PyPI:https://pypi.org/project/famCircle/ 下载安装包到本地安装
+&ensp;&ensp;&ensp;&ensp;命令  
+```
+pip install xx/xx/famCircle-*.*.*.tar.gz
+pip install xx/xx/famCircle-*.*.*-py3-none-any.whl
+```
+### 直接通过pip安装
+&ensp;&ensp;&ensp;&ensp;命令 
+
+```
+pip install famCircle
+```
+## 软件配置
+安装路径下/famCircle/conf.ini
+
+```
+[ini]
+hmmer_path = ~/bin/
+# hmm安装路径
+clustalw_path = ~/bin/clustalw
+#clustalw安装路径
+muscle_path = ~/bin/
+#muscle安装路径
+mafft_path = ~/bin/
+#mafft安装路径
+yn00_path = ~/bin/yn00
+#paml安装路径
+pal2nal_path = ~/bin/pal2nal.pl
+#pal2nal安装路径
+```
+## 软件使用
+### help
+
+```
+famCircle -h
+```
+### 文件配置 以outer为例
+
+```
+famCircle -o ? > total.conf# 覆盖
+famCircle -o ? >> total.conf# 追加
+```
+
+### 功能使用 以outer为例
+
+```
+famCircle -o total.conf
+```
 
 # 配置文件解释
 
