@@ -2,28 +2,28 @@
 
 ## 分析流程
 ![分析流程图](https://images.gitee.com/uploads/images/2021/0717/124804_dc342bac_8074509.png "famCircle.png")
-&ensp;&ensp;&ensp;&ensp;基因组下载以及处理  
-&ensp;&ensp;&ensp;&ensp;	路线：  
-		&ensp;&ensp;&ensp;&ensp;前期处理序列比对、共线性扫描、ks计算  
-		&ensp;&ensp;&ensp;&ensp;hmmer 隐马尔可夫模型搜索筛选  
-		&ensp;&ensp;&ensp;&ensp;screen tandem数量分部  
-			&ensp;&ensp;&ensp;&ensp;断开处：  
-				&ensp;&ensp;&ensp;&ensp;pfam结构域筛选# http://pfam.xfam.org/  
-				&ensp;&ensp;&ensp;&ensp;α/β筛选# http://cb.csail.mit.edu/cb/paircoil2/  
-		&ensp;&ensp;&ensp;&ensp;主程序选择：  
-			&ensp;&ensp;&ensp;&ensp;inner  
-				&ensp;&ensp;&ensp;&ensp;typing 数据格式化  
-				&ensp;&ensp;&ensp;&ensp;inner绘图  
-			&ensp;&ensp;&ensp;&ensp;outer  
-				&ensp;&ensp;&ensp;&ensp;typing 数据格式化  
-				&ensp;&ensp;&ensp;&ensp;outer绘图  
-		&ensp;&ensp;&ensp;&ensp;part局部tandem绘制  
-        &ensp;&ensp;&ensp;&ensp;其他可视化分析工具：  
-		&ensp;&ensp;&ensp;&ensp;ks展示  
-			&ensp;&ensp;&ensp;&ensp;全基因组 ks展示  
-			&ensp;&ensp;&ensp;&ensp;block ks展示  
-		&ensp;&ensp;&ensp;&ensp;circle全基因组共线性展示  
-		&ensp;&ensp;&ensp;&ensp;line局部共线性绘制  
+>基因组下载以及处理  
+>路线：  
+>>前期处理序列比对、共线性扫描、ks计算  
+>>hmmer 隐马尔可夫模型搜索筛选  
+>>screen tandem数量分部  
+>>>断开处：  
+>>>>pfam结构域筛选# http://pfam.xfam.org/  
+>>>>α/β筛选# http://cb.csail.mit.edu/cb/paircoil2/  
+>>主程序选择：  
+>>>inner  
+>>>>typing 数据格式化  
+>>>>inner绘图  
+>>>outer  
+>>>>typing 数据格式化  
+>>>>outer绘图  
+>>part局部tandem绘制  
+>其他可视化分析工具：  
+>>ks展示  
+>>>全基因组 ks展示  
+>>>block ks展示  
+>>>circle全基因组共线性展示  
+>>>line局部共线性绘制  
 
 
 # 配置文件解释
