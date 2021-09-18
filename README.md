@@ -157,6 +157,22 @@ famCircle -o total.conf
 ### 结构域筛选
 ### α/β筛选
 
+### 家族关系展示
+&ensp;&ensp;&ensp;&ensp;[circle_family]  
+&ensp;&ensp;&ensp;&ensp;lens1 = lens1 file  
+&ensp;&ensp;&ensp;&ensp;lens2 = lens2 file  
+&ensp;&ensp;&ensp;&ensp;gff1 = gff1 file  
+&ensp;&ensp;&ensp;&ensp;gff2 = gff2 file  
+&ensp;&ensp;&ensp;&ensp;species1 = species1 name  
+&ensp;&ensp;&ensp;&ensp;species2 = species1 name  
+&ensp;&ensp;&ensp;&ensp;genepairs = block file  
+&ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX  
+&ensp;&ensp;&ensp;&ensp;family_list = family file  
+&ensp;&ensp;&ensp;&ensp;radius = 0.3  
+&ensp;&ensp;&ensp;&ensp;block = 6  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+例：![拟南芥部分家族关系](https://images.gitee.com/uploads/images/2021/0918/114456_e4569355_8074509.png "ath.blast.cf.png")
+
 ### 结构域分布情况
 &ensp;&ensp;&ensp;&ensp;[screen]  
 &ensp;&ensp;&ensp;&ensp;domainpath = domain file path# 结构域搜索结果储存路径  
