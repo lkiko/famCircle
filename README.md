@@ -2,7 +2,7 @@
 
 ## 分析流程
 ![分析流程图](https://images.gitee.com/uploads/images/2021/0717/124804_dc342bac_8074509.png "famCircle.png")
-基因组下载以及处理
+&ensp;&ensp;&ensp;&ensp;基因组下载以及处理  
 	路线：
 		前期处理序列比对、共线性扫描、ks计算
 		hmmer 隐马尔可夫模型搜索筛选
