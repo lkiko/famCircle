@@ -169,7 +169,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX  
 &ensp;&ensp;&ensp;&ensp;family_list = family file  
 &ensp;&ensp;&ensp;&ensp;radius = 0.3  
-&ensp;&ensp;&ensp;&ensp;block = 6  
+&ensp;&ensp;&ensp;&ensp;block = 6# 当家族genepairfile为blast时block长度无意义  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 例：![拟南芥部分家族关系](https://images.gitee.com/uploads/images/2021/0918/114456_e4569355_8074509.png "ath.blast.cf.png")
 
