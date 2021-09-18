@@ -3,9 +3,9 @@
 ## 分析流程
 ![分析流程图](https://images.gitee.com/uploads/images/2021/0717/124804_dc342bac_8074509.png "famCircle.png")
 &ensp;&ensp;&ensp;&ensp;基因组下载以及处理  
-	路线：
-		前期处理序列比对、共线性扫描、ks计算
-		hmmer 隐马尔可夫模型搜索筛选
+&ensp;&ensp;&ensp;&ensp;	路线：    
+		&ensp;&ensp;&ensp;&ensp;前期处理序列比对、共线性扫描、ks计算  
+		&ensp;&ensp;&ensp;&ensp;hmmer 隐马尔可夫模型搜索筛选  
 		screen tandem数量分部
 			断开处：
 				pfam结构域筛选# http://pfam.xfam.org/
