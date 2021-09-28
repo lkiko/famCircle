@@ -58,6 +58,7 @@ pal2nal_path = ~/bin/pal2nal.pl
 #pal2nal安装路径
 ```
 ## 软件使用
+交流群![交流群号](https://images.gitee.com/uploads/images/2021/0928/123500_6eb999c4_8074509.jpeg "B5726647-A6DC-4C3E-ADF7-30720901BC51.jpeg")
 ### help
 
 ```
