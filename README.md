@@ -1,8 +1,7 @@
 # famCircle 基因家族分析，tandem可视化分析
 
 ## 分析流程
-![分析流程图](https://images.gitee.com/uploads/images/2021/0717/124804_dc342bac_8074509.png "famCircle.png")
-![分析流程图](https://images.gitee.com/uploads/images/2021/1011/163720_7898a42e_8074509.png "famCircle.vpd.png")
+![分析流程](https://images.gitee.com/uploads/images/2021/1011/164430_44551292_8074509.png "famCircle.vpd.png")
 >基因组下载以及处理  
 >路线：  
 >>前期处理序列比对、共线性扫描、ks计算  
@@ -89,14 +88,6 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;pairs_file = gene pairs file# 共线性文件  
 &ensp;&ensp;&ensp;&ensp;ks_file = ks result# 输出文件  
 
-### 全基因组ks数据分布
-&ensp;&ensp;&ensp;&ensp;[Ks_allocation]  
-&ensp;&ensp;&ensp;&ensp;ks = ks file# ks文件  
-&ensp;&ensp;&ensp;&ensp;species_list = specise name# 物种列表例如：ath,vvi  
-&ensp;&ensp;&ensp;&ensp;area = 0,2.5# ks绘制区间  
-&ensp;&ensp;&ensp;&ensp;model = YN00/NG86# 绘制ks来源  
-&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)# 输出图片  
-例：![test:拟南芥ks数据分布](https://images.gitee.com/uploads/images/2021/0717/125414_357dd5c8_8074509.png "test.collinearity.ks.all.png")
 
 ### 基因块ks数据分布图
 &ensp;&ensp;&ensp;&ensp;[Ks_block]  
@@ -109,7 +100,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;pvalue = 1e-5# block阈值控制参数  
 &ensp;&ensp;&ensp;&ensp;savecsv = save csv# 筛选结果文件  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)# 筛选结果可视化  
-例：![test:拟南芥基因块ks数据分布block长度为10+](https://images.gitee.com/uploads/images/2021/0717/125847_77aaf58a_8074509.png "test.collinearity.ks.block.png")
+例：![水稻block的ks分布](https://images.gitee.com/uploads/images/2021/1011/164725_6a93e1f7_8074509.png "osa_osa.new.blastp.collinearity.kb.png")
 
 ### 基因组共线性展示
 &ensp;&ensp;&ensp;&ensp;[circle_all]  
@@ -133,17 +124,6 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;savefile = savefile(.png,.pdf)# 局部共线性展示结果  
 例：![test:拟南芥2号和3号染色体间共线性展示](https://images.gitee.com/uploads/images/2021/0717/131629_dd9e4e79_8074509.png "test.line.png")
 
-### 结合ks的共线性展示
-&ensp;&ensp;&ensp;&ensp;[circle]  
-&ensp;&ensp;&ensp;&ensp;lens = lens file# 染色体文件  
-&ensp;&ensp;&ensp;&ensp;gff = gff file# 基因注释文件  
-&ensp;&ensp;&ensp;&ensp;species_list = Genome name# 物种列表例如：ath,vvi  
-&ensp;&ensp;&ensp;&ensp;ks = ks file# ks文件  
-&ensp;&ensp;&ensp;&ensp;genepairs = genepairs file# 共线性文件  
-&ensp;&ensp;&ensp;&ensp;block = 6# block长度控制参数  
-&ensp;&ensp;&ensp;&ensp;radius = 0.45# 半径  
-&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)# ks共线性展示图  
-例：![test:拟南芥ks共线性可视化](https://images.gitee.com/uploads/images/2021/0717/135435_0c4f7f81_8074509.png "test.collinearity.circle.png")
 
 ## 家族展示
 ### 基因家族查找
@@ -155,9 +135,6 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;comparison = muscle/clustal# 比对软件  
 &ensp;&ensp;&ensp;&ensp;e_value1 = value1# 初筛阈值  
 &ensp;&ensp;&ensp;&ensp;e_value2 = value2# 复筛阈值  
-
-### 结构域筛选
-### α/β筛选
 
 ### 家族关系展示
 &ensp;&ensp;&ensp;&ensp;[circle_family]  
@@ -174,6 +151,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;block = 6# 当家族genepairfile为blast时block长度无意义  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 例：![拟南芥部分家族关系](https://images.gitee.com/uploads/images/2021/0918/114456_e4569355_8074509.png "ath.blast.cf.png")
+![水稻NBS家族分布](https://images.gitee.com/uploads/images/2021/1011/165044_4086989e_8074509.png "osa_osa.wgdi.collinearity.wf.png")
 
 ### 结构域分布情况
 &ensp;&ensp;&ensp;&ensp;[screen]  
@@ -206,6 +184,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;savecsv = outer file (*.csv)# 筛选结果储存文件  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)# 筛选结果可视化  
 例：![test:拟南芥部分结构域tandem展示](https://images.gitee.com/uploads/images/2021/0717/132312_93086faa_8074509.png "test.inner.png")
+![水稻内卷的家族分布图](https://images.gitee.com/uploads/images/2021/1011/165242_80621c7a_8074509.png "osa_osa.collinearity.ks.i.png")
 
 ### 放射型的tandem可视化
 &ensp;&ensp;&ensp;&ensp;[outer]  
@@ -223,6 +202,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)# 筛选结果可视化  
 例：![test:拟南芥部分结构域tandem展示](https://images.gitee.com/uploads/images/2021/0717/135152_5bdfd054_8074509.png "test.outer.png")
 
+
 ### 局部tandem展示
 &ensp;&ensp;&ensp;&ensp;[part]  
 &ensp;&ensp;&ensp;&ensp;lens = lens file# 染色体文件  
@@ -235,3 +215,4 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;clusters = True# ks区间内分段展示  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)# 筛选结果可视化  
 例：![test:拟南芥2号染色体部分结构域的tandem展示](https://images.gitee.com/uploads/images/2021/0717/133034_2af62f7f_8074509.png "test.part.png")
+![水稻局部家族分布](https://images.gitee.com/uploads/images/2021/1011/165322_4ec10895_8074509.png "outer.out.csv.p.png")
