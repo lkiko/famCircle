@@ -1,7 +1,7 @@
 # famCircle 基因家族分析，tandem可视化分析
 
 ## 分析流程
-![分析流程](https://images.gitee.com/uploads/images/2021/1011/164430_44551292_8074509.png "famCircle.vpd.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2021/1011/190711_8e8d47f1_8074509.png "famCircle.vpd.png")
 >基因组下载以及处理  
 >路线：  
 >>前期处理序列比对、共线性扫描、ks计算  
