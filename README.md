@@ -2,6 +2,7 @@
 
 ## 分析流程
 ![分析流程图](https://images.gitee.com/uploads/images/2021/0717/124804_dc342bac_8074509.png "famCircle.png")
+![分析流程图](https://images.gitee.com/uploads/images/2021/1011/163720_7898a42e_8074509.png "famCircle.vpd.png")
 >基因组下载以及处理  
 >路线：  
 >>前期处理序列比对、共线性扫描、ks计算  
