@@ -78,7 +78,246 @@ famCircle -o total.conf
 ```
 
 # 配置文件解释
+%%
+&ensp;&ensp;&ensp;&ensp;[circle]  
+&ensp;&ensp;&ensp;&ensp;lens1 = lens1 file  
+&ensp;&ensp;&ensp;&ensp;lens2 = lens2 file  
+&ensp;&ensp;&ensp;&ensp;gff1 = gff1 file  
+&ensp;&ensp;&ensp;&ensp;gff2 = gff2 file  
+&ensp;&ensp;&ensp;&ensp;genepairs = genepairs file  
+&ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX  
+&ensp;&ensp;&ensp;&ensp;ks = ks file
+&ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
+&ensp;&ensp;&ensp;&ensp;block = 6  
+&ensp;&ensp;&ensp;&ensp;radius = 0.3  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 
+&ensp;&ensp;&ensp;&ensp;[circle_all]  
+&ensp;&ensp;&ensp;&ensp;lens1 = lens1 file  
+&ensp;&ensp;&ensp;&ensp;lens2 = lens2 file  
+&ensp;&ensp;&ensp;&ensp;gff1 = gff1 file  
+&ensp;&ensp;&ensp;&ensp;gff2 = gff2 file  
+&ensp;&ensp;&ensp;&ensp;genepairs = block file  
+&ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX  
+&ensp;&ensp;&ensp;&ensp;radius = 0.3  
+&ensp;&ensp;&ensp;&ensp;block = 6  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+
+
+&ensp;&ensp;&ensp;&ensp;[circle_family]  
+&ensp;&ensp;&ensp;&ensp;lens = lens file  
+&ensp;&ensp;&ensp;&ensp;gff = gff file  
+&ensp;&ensp;&ensp;&ensp;genepairs = block file  
+&ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX  
+&ensp;&ensp;&ensp;&ensp;genefamily = family file  
+&ensp;&ensp;&ensp;&ensp;radius = 0.3  
+&ensp;&ensp;&ensp;&ensp;block = 6  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+
+
+&ensp;&ensp;&ensp;&ensp;[dispersed]  
+&ensp;&ensp;&ensp;&ensp;lens = lens file  
+&ensp;&ensp;&ensp;&ensp;gff = gff file  
+&ensp;&ensp;&ensp;&ensp;blast = pair file  
+&ensp;&ensp;&ensp;&ensp;ks = ks file  
+&ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
+&ensp;&ensp;&ensp;&ensp;position = end  
+&ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
+&ensp;&ensp;&ensp;&ensp;radius = 0.3  
+&ensp;&ensp;&ensp;&ensp;outfile = out file (*.txt)  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+
+
+&ensp;&ensp;&ensp;&ensp;[family_pair]  
+&ensp;&ensp;&ensp;&ensp;family_list = family file  
+&ensp;&ensp;&ensp;&ensp;gene_pair = gene_pair file  
+&ensp;&ensp;&ensp;&ensp;pairfile_type = blast  
+&ensp;&ensp;&ensp;&ensp;parameter = 5  
+&ensp;&ensp;&ensp;&ensp;savefile =  out file  
+
+
+&ensp;&ensp;&ensp;&ensp;[filterWGD]  
+&ensp;&ensp;&ensp;&ensp;gff = gff file  
+&ensp;&ensp;&ensp;&ensp;ks = ks file  
+&ensp;&ensp;&ensp;&ensp;min_ks = .0/0./other  
+&ensp;&ensp;&ensp;&ensp;colinearity_file = colinearity file  
+&ensp;&ensp;&ensp;&ensp;colinearity_type = WGDI/ColinearScan  
+&ensp;&ensp;&ensp;&ensp;block = 10  
+&ensp;&ensp;&ensp;&ensp;multiple = multiple  
+&ensp;&ensp;&ensp;&ensp;area1 = min,max  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (WGD colinearity file)  
+
+
+&ensp;&ensp;&ensp;&ensp;[hmmer]  
+&ensp;&ensp;&ensp;&ensp;pep = pep file  
+&ensp;&ensp;&ensp;&ensp;cds = cds file  
+&ensp;&ensp;&ensp;&ensp;hmmmoldpath = hmm file  
+&ensp;&ensp;&ensp;&ensp;format_conversion = Fales  
+&ensp;&ensp;&ensp;&ensp;comparison = clustal  
+&ensp;&ensp;&ensp;&ensp;e_value1 = value1  
+&ensp;&ensp;&ensp;&ensp;e_value2 = value2  
+
+
+&ensp;&ensp;&ensp;&ensp;[inner]  
+&ensp;&ensp;&ensp;&ensp;lens1 = lens1 file  
+&ensp;&ensp;&ensp;&ensp;lens2 = lens2 file  
+&ensp;&ensp;&ensp;&ensp;gff1 = gff1 file  
+&ensp;&ensp;&ensp;&ensp;gff2 = gff2 file  
+&ensp;&ensp;&ensp;&ensp;species1 = species1 name  
+&ensp;&ensp;&ensp;&ensp;species2 = species1 name  
+&ensp;&ensp;&ensp;&ensp;ks = ks file  
+&ensp;&ensp;&ensp;&ensp;pair_file = pair file  
+&ensp;&ensp;&ensp;&ensp;file_type = coliearity/blast  
+&ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
+&ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
+&ensp;&ensp;&ensp;&ensp;radius = 0.3  
+&ensp;&ensp;&ensp;&ensp;space = 0.005  
+&ensp;&ensp;&ensp;&ensp;clusters = True  
+&ensp;&ensp;&ensp;&ensp;peripheral = False  
+&ensp;&ensp;&ensp;&ensp;savecsv = out file (*.csv)  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+
+
+&ensp;&ensp;&ensp;&ensp;[Ks]  
+&ensp;&ensp;&ensp;&ensp;cds_file = 	cds file  
+&ensp;&ensp;&ensp;&ensp;pep_file = 	pep file  
+&ensp;&ensp;&ensp;&ensp;align_software = muscle  
+&ensp;&ensp;&ensp;&ensp;pairs_file = gene pairs file  
+&ensp;&ensp;&ensp;&ensp;ks_file = ks result  
+
+
+&ensp;&ensp;&ensp;&ensp;[Ks_allocation]  
+&ensp;&ensp;&ensp;&ensp;ks = ks file  
+&ensp;&ensp;&ensp;&ensp;species_list = specise name  
+&ensp;&ensp;&ensp;&ensp;family_list = family file  
+&ensp;&ensp;&ensp;&ensp;area = 0,2.5  
+&ensp;&ensp;&ensp;&ensp;model = YN00/NG86  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+
+
+&ensp;&ensp;&ensp;&ensp;[Ks_block]  
+&ensp;&ensp;&ensp;&ensp;ks = ks file  
+&ensp;&ensp;&ensp;&ensp;area = 0,2.5  
+&ensp;&ensp;&ensp;&ensp;model = YN00/NG86  
+&ensp;&ensp;&ensp;&ensp;genepairs = block file  
+&ensp;&ensp;&ensp;&ensp;genepairsfile_type = WGDI  
+&ensp;&ensp;&ensp;&ensp;block = 6  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+
+
+&ensp;&ensp;&ensp;&ensp;[line]  
+&ensp;&ensp;&ensp;&ensp;genepairs = pairs file  
+&ensp;&ensp;&ensp;&ensp;genepairsfile_type = WGDI  
+&ensp;&ensp;&ensp;&ensp;lens1 = lens1 file  
+&ensp;&ensp;&ensp;&ensp;lens2 = lens2 file  
+&ensp;&ensp;&ensp;&ensp;gff1 =  gff1 file  
+&ensp;&ensp;&ensp;&ensp;gff2 =  gff2 file  
+&ensp;&ensp;&ensp;&ensp;chr1_name =  chr1 name  
+&ensp;&ensp;&ensp;&ensp;chr2_name =  chr2 name  
+&ensp;&ensp;&ensp;&ensp;savefile = savefile(.png,.pdf)  
+
+
+&ensp;&ensp;&ensp;&ensp;[outer]  
+&ensp;&ensp;&ensp;&ensp;lens = lens file  
+&ensp;&ensp;&ensp;&ensp;gff = gff file  
+&ensp;&ensp;&ensp;&ensp;species = Genome name  
+&ensp;&ensp;&ensp;&ensp;ks = ks file  
+&ensp;&ensp;&ensp;&ensp;pair_file = pair file  
+&ensp;&ensp;&ensp;&ensp;file_type = coliearity/blast  
+&ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
+&ensp;&ensp;&ensp;&ensp;Ks_concern = 0,0.15  
+&ensp;&ensp;&ensp;&ensp;radius = 0.3  
+&ensp;&ensp;&ensp;&ensp;space = 0.005  
+&ensp;&ensp;&ensp;&ensp;clusters = True  
+&ensp;&ensp;&ensp;&ensp;peripheral = False  
+&ensp;&ensp;&ensp;&ensp;savecsv = out file (*.csv)  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+
+
+&ensp;&ensp;&ensp;&ensp;[part]  
+&ensp;&ensp;&ensp;&ensp;lens = lens file  
+&ensp;&ensp;&ensp;&ensp;gff = gff file  
+&ensp;&ensp;&ensp;&ensp;chro_name = chro name  
+&ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
+&ensp;&ensp;&ensp;&ensp;pairs_file = outer/inner pairs csv  
+&ensp;&ensp;&ensp;&ensp;interval = 0,9000  
+&ensp;&ensp;&ensp;&ensp;space = 0.005  
+&ensp;&ensp;&ensp;&ensp;clusters = True  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+
+
+&ensp;&ensp;&ensp;&ensp;[proximal]  
+&ensp;&ensp;&ensp;&ensp;lens = lens file  
+&ensp;&ensp;&ensp;&ensp;gff = gff file  
+&ensp;&ensp;&ensp;&ensp;pair_file = pair file  
+&ensp;&ensp;&ensp;&ensp;file_type = BLAST  
+&ensp;&ensp;&ensp;&ensp;ks = ks file  
+&ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
+&ensp;&ensp;&ensp;&ensp;position = end  
+&ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
+&ensp;&ensp;&ensp;&ensp;radius = 0.3  
+&ensp;&ensp;&ensp;&ensp;outother = out other (*.txt)  
+&ensp;&ensp;&ensp;&ensp;outfile = out file (*.txt)  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+
+
+&ensp;&ensp;&ensp;&ensp;[screen]  
+&ensp;&ensp;&ensp;&ensp;domainpath = domain file  
+&ensp;&ensp;&ensp;&ensp;lens = lens file  
+&ensp;&ensp;&ensp;&ensp;gff = gff file  
+&ensp;&ensp;&ensp;&ensp;chro_name = chro name  
+&ensp;&ensp;&ensp;&ensp;series = 25  
+&ensp;&ensp;&ensp;&ensp;outpath = out file  
+
+
+&ensp;&ensp;&ensp;&ensp;[tandem]  
+&ensp;&ensp;&ensp;&ensp;lens = lens file  
+&ensp;&ensp;&ensp;&ensp;gff = gff file  
+&ensp;&ensp;&ensp;&ensp;pair_file = pair file  
+&ensp;&ensp;&ensp;&ensp;file_type = BLAST  
+&ensp;&ensp;&ensp;&ensp;ks = ks file  
+&ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
+&ensp;&ensp;&ensp;&ensp;position = end  
+&ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
+&ensp;&ensp;&ensp;&ensp;radius = 0.3  
+&ensp;&ensp;&ensp;&ensp;outother = out other (*.txt)  
+&ensp;&ensp;&ensp;&ensp;outfile = out file (*.txt)  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)
+
+
+&ensp;&ensp;&ensp;&ensp;[trd]  
+&ensp;&ensp;&ensp;&ensp;lens = lens file  
+&ensp;&ensp;&ensp;&ensp;gff = gff file  
+&ensp;&ensp;&ensp;&ensp;ks = ks file  
+&ensp;&ensp;&ensp;&ensp;genepairs = pair file  
+&ensp;&ensp;&ensp;&ensp;file_type = famCircle  
+&ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
+&ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
+&ensp;&ensp;&ensp;&ensp;radius = 0.3  
+&ensp;&ensp;&ensp;&ensp;outother = out other (*.txt)  
+&ensp;&ensp;&ensp;&ensp;outfile = out file (*.txt)  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+
+
+&ensp;&ensp;&ensp;&ensp;[typing]  
+&ensp;&ensp;&ensp;&ensp;domainpath = domain file  
+&ensp;&ensp;&ensp;&ensp;domainlist = Genome name  
+&ensp;&ensp;&ensp;&ensp;savefile = out file  
+
+
+&ensp;&ensp;&ensp;&ensp;[WGD_family]  
+&ensp;&ensp;&ensp;&ensp;lens = lens file   
+&ensp;&ensp;&ensp;&ensp;gff = gff file  
+&ensp;&ensp;&ensp;&ensp;genepairs = pair file  
+&ensp;&ensp;&ensp;&ensp;file_type = famCircle  
+&ensp;&ensp;&ensp;&ensp;ks = ks file  
+&ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
+&ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
+&ensp;&ensp;&ensp;&ensp;radius = 0.3  
+&ensp;&ensp;&ensp;&ensp;outother = out other (*.txt)  
+&ensp;&ensp;&ensp;&ensp;outfile = out file (*.txt)  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+%%
 ## 前期
 ### 计算ks
 &ensp;&ensp;&ensp;&ensp;[Ks]  
