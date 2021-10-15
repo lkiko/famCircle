@@ -84,7 +84,7 @@ famCircle -o ? >> total.conf# 追加
 famCircle -o total.conf
 ```
 
-# 配置文件解释
+# 配置文件解释 因为gitee图片限制，以下例图来源于程序截图，程序生成的图像分辨率远高于例图
 &ensp;&ensp;&ensp;&ensp;[circle_all]  
 &ensp;&ensp;&ensp;&ensp;lens1 = lens1 file  
 &ensp;&ensp;&ensp;&ensp;lens2 = lens2 file  
