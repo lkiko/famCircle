@@ -133,7 +133,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;gff2 = gff2 file  
 &ensp;&ensp;&ensp;&ensp;genepairs = genepairs file  
 &ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX  
-&ensp;&ensp;&ensp;&ensp;ks = ks file
+&ensp;&ensp;&ensp;&ensp;ks = ks file  
 &ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
 &ensp;&ensp;&ensp;&ensp;block = 6  
 &ensp;&ensp;&ensp;&ensp;radius = 0.3  
