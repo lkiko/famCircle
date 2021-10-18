@@ -85,39 +85,39 @@ famCircle -o total.conf
 ```
 
 # 配置文件解释 因为gitee图片限制，以下例图来源于程序截图，程序生成的图像分辨率远高于例图
-&ensp;&ensp;&ensp;&ensp;[circle_all]  
-&ensp;&ensp;&ensp;&ensp;lens1 = lens1 file  
-&ensp;&ensp;&ensp;&ensp;lens2 = lens2 file  
-&ensp;&ensp;&ensp;&ensp;gff1 = gff1 file  
-&ensp;&ensp;&ensp;&ensp;gff2 = gff2 file  
-&ensp;&ensp;&ensp;&ensp;genepairs = block file  
-&ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX  
-&ensp;&ensp;&ensp;&ensp;radius = 0.3  
-&ensp;&ensp;&ensp;&ensp;block = 6  
-&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
+&ensp;&ensp;&ensp;&ensp;[circle_all]# 共线性圈图  
+&ensp;&ensp;&ensp;&ensp;lens1 = lens1 file#物种1的染色体长度文件  
+&ensp;&ensp;&ensp;&ensp;lens2 = lens2 file#物种2的染色体长度文件  
+&ensp;&ensp;&ensp;&ensp;gff1 = gff1 file#物种1的gff文件  
+&ensp;&ensp;&ensp;&ensp;gff2 = gff2 file#物种2的gff文件  
+&ensp;&ensp;&ensp;&ensp;genepairs = block file#物种间共线性比对文件  
+&ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX#支持MCScanX、ColinearScan输出结果  
+&ensp;&ensp;&ensp;&ensp;radius = 0.3#圈图半径  
+&ensp;&ensp;&ensp;&ensp;block = 6#共线性片段最小长度  
+&ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)#输出格式  
 ![共线性块](https://images.gitee.com/uploads/images/2021/1016/000047_3cc36919_8074509.png "ca.png")
 
-&ensp;&ensp;&ensp;&ensp;[line]  
+&ensp;&ensp;&ensp;&ensp;[line]#局部共线性图  
 &ensp;&ensp;&ensp;&ensp;genepairs = pairs file  
-&ensp;&ensp;&ensp;&ensp;genepairsfile_type = WGDI  
-&ensp;&ensp;&ensp;&ensp;lens1 = lens1 file  
-&ensp;&ensp;&ensp;&ensp;lens2 = lens2 file  
-&ensp;&ensp;&ensp;&ensp;gff1 =  gff1 file  
-&ensp;&ensp;&ensp;&ensp;gff2 =  gff2 file  
-&ensp;&ensp;&ensp;&ensp;chr1_name =  chr1 name  
+&ensp;&ensp;&ensp;&ensp;genepairsfile_type = WGDI#支持WGDI输出结果  
+&ensp;&ensp;&ensp;&ensp;lens1 = lens1 file#物种1染色体长度文件  
+&ensp;&ensp;&ensp;&ensp;lens2 = lens2 file#物种2的染色体长度文件  
+&ensp;&ensp;&ensp;&ensp;gff1 =  gff1 file#物种1的gff文件  
+&ensp;&ensp;&ensp;&ensp;gff2 =  gff2 file#物种2的gff文件  
+&ensp;&ensp;&ensp;&ensp;chr1_name =  chr1 name#染色体名  
 &ensp;&ensp;&ensp;&ensp;chr2_name =  chr2 name  
-&ensp;&ensp;&ensp;&ensp;savefile = savefile(.png,.pdf)  
+&ensp;&ensp;&ensp;&ensp;savefile = savefile(.png,.pdf)#支持输出.png，.pdf格式  
 ![局部共线性](https://images.gitee.com/uploads/images/2021/1016/000115_d944aba8_8074509.png "l.png")
 
 &ensp;&ensp;&ensp;&ensp;[Ks]  
 &ensp;&ensp;&ensp;&ensp;cds_file = 	cds file  
 &ensp;&ensp;&ensp;&ensp;pep_file = 	pep file  
-&ensp;&ensp;&ensp;&ensp;align_software = muscle  
-&ensp;&ensp;&ensp;&ensp;pairs_file = gene pairs file  
+&ensp;&ensp;&ensp;&ensp;align_software = muscle#调用muscle进行多序列比对  
+&ensp;&ensp;&ensp;&ensp;pairs_file = gene pairs file#基因对文件  
 &ensp;&ensp;&ensp;&ensp;ks_file = ks result  
 
 &ensp;&ensp;&ensp;&ensp;[Ks_block]  
-&ensp;&ensp;&ensp;&ensp;ks = ks file  
+&ensp;&ensp;&ensp;&ensp;ks = ks file#输入ks文件  
 &ensp;&ensp;&ensp;&ensp;area = 0,2.5  
 &ensp;&ensp;&ensp;&ensp;model = YN00/NG86  
 &ensp;&ensp;&ensp;&ensp;genepairs = block file  
@@ -126,7 +126,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 ![ks_block](https://images.gitee.com/uploads/images/2021/1016/000140_9af20f52_8074509.png "kb.png")
 
-&ensp;&ensp;&ensp;&ensp;[circle]  
+&ensp;&ensp;&ensp;&ensp;[circle]#共线性ks圈图  
 &ensp;&ensp;&ensp;&ensp;lens1 = lens1 file  
 &ensp;&ensp;&ensp;&ensp;lens2 = lens2 file  
 &ensp;&ensp;&ensp;&ensp;gff1 = gff1 file  
@@ -134,38 +134,38 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;genepairs = genepairs file  
 &ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX  
 &ensp;&ensp;&ensp;&ensp;ks = ks file  
-&ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
+&ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5#ks范围  
 &ensp;&ensp;&ensp;&ensp;block = 6  
 &ensp;&ensp;&ensp;&ensp;radius = 0.3  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 ![共线性——ks](https://images.gitee.com/uploads/images/2021/1016/000209_bbc61706_8074509.png "c.png")
 
-&ensp;&ensp;&ensp;&ensp;[hmmer]  
-&ensp;&ensp;&ensp;&ensp;pep = pep file  
-&ensp;&ensp;&ensp;&ensp;cds = cds file  
-&ensp;&ensp;&ensp;&ensp;hmmmoldpath = hmm file  
+&ensp;&ensp;&ensp;&ensp;[hmmer]#鉴定基因家族  
+&ensp;&ensp;&ensp;&ensp;pep = pep file#物种蛋白质文件  
+&ensp;&ensp;&ensp;&ensp;cds = cds file#物种cds文件  
+&ensp;&ensp;&ensp;&ensp;hmmmoldpath = hmm file#存放基因家族HMM模型路径  
 &ensp;&ensp;&ensp;&ensp;format_conversion = Fales  
-&ensp;&ensp;&ensp;&ensp;comparison = clustal  
-&ensp;&ensp;&ensp;&ensp;e_value1 = value1  
-&ensp;&ensp;&ensp;&ensp;e_value2 = value2  
+&ensp;&ensp;&ensp;&ensp;comparison = clustal#调用多序列比对工具  
+&ensp;&ensp;&ensp;&ensp;e_value1 = value1#设置阈值构建物种特异性hmm文件  
+&ensp;&ensp;&ensp;&ensp;e_value2 = value2#设置阈值筛选基因家族候选序列  
 
-&ensp;&ensp;&ensp;&ensp;[circle_family]  
+&ensp;&ensp;&ensp;&ensp;[circle_family]#基因家族分布图  
 &ensp;&ensp;&ensp;&ensp;lens = lens file  
 &ensp;&ensp;&ensp;&ensp;gff = gff file  
 &ensp;&ensp;&ensp;&ensp;genepairs = block file  
 &ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX  
-&ensp;&ensp;&ensp;&ensp;genefamily = family file  
+&ensp;&ensp;&ensp;&ensp;genefamily = family file#基因家族候选序列文件  
 &ensp;&ensp;&ensp;&ensp;radius = 0.3  
 &ensp;&ensp;&ensp;&ensp;block = 6  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 ![家族分布](https://images.gitee.com/uploads/images/2021/1016/000242_31aa7da7_8074509.png "cf.png") 
 
-&ensp;&ensp;&ensp;&ensp;[screen]  
-&ensp;&ensp;&ensp;&ensp;domainpath = domain file  
+&ensp;&ensp;&ensp;&ensp;[screen]#基因家族亚家族数量分布图  
+&ensp;&ensp;&ensp;&ensp;domainpath = domain file#hmmsearch结果文件路径  
 &ensp;&ensp;&ensp;&ensp;lens = lens file  
 &ensp;&ensp;&ensp;&ensp;gff = gff file  
-&ensp;&ensp;&ensp;&ensp;chro_name = chro name  
-&ensp;&ensp;&ensp;&ensp;series = 25  
+&ensp;&ensp;&ensp;&ensp;chro_name = chro name#染色体名称  
+&ensp;&ensp;&ensp;&ensp;series = 25#  
 &ensp;&ensp;&ensp;&ensp;outpath = out file 
 ![数量分布](https://images.gitee.com/uploads/images/2021/1016/000354_283bcc7d_8074509.png "ath1.png")
 
@@ -174,28 +174,28 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;domainlist = Genome name  
 &ensp;&ensp;&ensp;&ensp;savefile = out file  
 
-&ensp;&ensp;&ensp;&ensp;[outer]  
+&ensp;&ensp;&ensp;&ensp;[outer]#基因家族全部成员分布及tandem外圈图  
 &ensp;&ensp;&ensp;&ensp;lens = lens file  
 &ensp;&ensp;&ensp;&ensp;gff = gff file  
 &ensp;&ensp;&ensp;&ensp;ks = ks file  
 &ensp;&ensp;&ensp;&ensp;pair_file = pair file  
-&ensp;&ensp;&ensp;&ensp;file_type = WGDI/BLAST  
-&ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
-&ensp;&ensp;&ensp;&ensp;Ks_concern = 0,0.15  
+&ensp;&ensp;&ensp;&ensp;file_type = WGDI/BLAST#支持WGDI、BLAST输出文件  
+&ensp;&ensp;&ensp;&ensp;genefamily = famliy file#候选基因家族成员文件  
+&ensp;&ensp;&ensp;&ensp;Ks_concern = 0,0.15#ks值范围  
 &ensp;&ensp;&ensp;&ensp;radius = 0.3  
-&ensp;&ensp;&ensp;&ensp;cluster = 16  
+&ensp;&ensp;&ensp;&ensp;cluster = 16#簇间距  
 &ensp;&ensp;&ensp;&ensp;parameter = False  
 &ensp;&ensp;&ensp;&ensp;savecsv = out file (*.csv)  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)   
 ![家族全部成员](https://images.gitee.com/uploads/images/2021/1016/000427_a77a01cc_8074509.png "o.png")
 
-&ensp;&ensp;&ensp;&ensp;[inner]
+&ensp;&ensp;&ensp;&ensp;[inner]#基因家族分布及tandem内圈图
 &ensp;&ensp;&ensp;&ensp;lens = lens file  
 &ensp;&ensp;&ensp;&ensp;gff = gff file  
 &ensp;&ensp;&ensp;&ensp;ks = ks file  
 &ensp;&ensp;&ensp;&ensp;pair_file = pair file  
-&ensp;&ensp;&ensp;&ensp;file_type = WGDI/BLAST  
-&ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
+&ensp;&ensp;&ensp;&ensp;file_type = WGDI/BLAST#支持WGDI、BLAST输出文件  
+&ensp;&ensp;&ensp;&ensp;genefamily = famliy file#候选基因家族成员文件  
 &ensp;&ensp;&ensp;&ensp;Ks_concern = 0,0.15  
 &ensp;&ensp;&ensp;&ensp;radius = 0.3  
 &ensp;&ensp;&ensp;&ensp;cluster = 16  
@@ -204,7 +204,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 ![家族全部成员](https://images.gitee.com/uploads/images/2021/1016/000509_2700d2ee_8074509.png "i.png")
 
-&ensp;&ensp;&ensp;&ensp;[part]  
+&ensp;&ensp;&ensp;&ensp;[part]#基因家族局部共线性图  
 &ensp;&ensp;&ensp;&ensp;lens = lens file  
 &ensp;&ensp;&ensp;&ensp;gff = gff file  
 &ensp;&ensp;&ensp;&ensp;chro_name = chro name  
@@ -216,7 +216,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 &ensp;&ensp;&ensp;&ensp;修改中  
 
-&ensp;&ensp;&ensp;&ensp;[filterWGD]  
+&ensp;&ensp;&ensp;&ensp;[filterWGD]#  
 &ensp;&ensp;&ensp;&ensp;gff = gff file  
 &ensp;&ensp;&ensp;&ensp;ks = ks file  
 &ensp;&ensp;&ensp;&ensp;min_ks = .0/0./other  
@@ -227,7 +227,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;area1 = min,max  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (WGD colinearity file) 
 
-&ensp;&ensp;&ensp;&ensp;[tandem]  
+&ensp;&ensp;&ensp;&ensp;[tandem]#串联重复分布图  
 &ensp;&ensp;&ensp;&ensp;lens = lens file  
 &ensp;&ensp;&ensp;&ensp;gff = gff file  
 &ensp;&ensp;&ensp;&ensp;pair_file = pair file  
@@ -242,7 +242,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)
 ![串联重复](https://images.gitee.com/uploads/images/2021/1016/000623_af6be778_8074509.png "td.png")
 
-&ensp;&ensp;&ensp;&ensp;[proximal]  
+&ensp;&ensp;&ensp;&ensp;[proximal]#近端重复分布图  
 &ensp;&ensp;&ensp;&ensp;lens = lens file  
 &ensp;&ensp;&ensp;&ensp;gff = gff file  
 &ensp;&ensp;&ensp;&ensp;pair_file = pair file  
@@ -257,7 +257,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)   
 ![近端重复](https://images.gitee.com/uploads/images/2021/1016/000655_50320e76_8074509.png "pd.png")
 
-&ensp;&ensp;&ensp;&ensp;[WGD_family]  
+&ensp;&ensp;&ensp;&ensp;[WGD_family]#全基因组加倍分布图  
 &ensp;&ensp;&ensp;&ensp;lens = lens file   
 &ensp;&ensp;&ensp;&ensp;gff = gff file  
 &ensp;&ensp;&ensp;&ensp;genepairs = pair file  
@@ -271,7 +271,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 ![全基因组加倍](https://images.gitee.com/uploads/images/2021/1016/000720_5322f5bd_8074509.png "wgd.png")
 
-&ensp;&ensp;&ensp;&ensp;[trd]  
+&ensp;&ensp;&ensp;&ensp;[trd]#转座子分布图  
 &ensp;&ensp;&ensp;&ensp;lens = lens file  
 &ensp;&ensp;&ensp;&ensp;gff = gff file  
 &ensp;&ensp;&ensp;&ensp;ks = ks file  
@@ -285,7 +285,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 ![转座重复](https://images.gitee.com/uploads/images/2021/1016/000749_a2e1d0cb_8074509.png "trd.png")
 
-&ensp;&ensp;&ensp;&ensp;[dispersed]  
+&ensp;&ensp;&ensp;&ensp;[dispersed]#散在重复分布图  
 &ensp;&ensp;&ensp;&ensp;lens = lens file  
 &ensp;&ensp;&ensp;&ensp;gff = gff file  
 &ensp;&ensp;&ensp;&ensp;blast = pair file  
