@@ -85,6 +85,12 @@ famCircle -o total.conf
 ```
 
 # 配置文件解释 因为gitee图片限制，以下例图来源于程序截图，程序生成的图像分辨率远高于例图
+
+&ensp;&ensp;&ensp;&ensp;[filter_unit]# 过滤blast文件  
+&ensp;&ensp;&ensp;&ensp;blast = old blast file# 旧blast文件  
+&ensp;&ensp;&ensp;&ensp;number = 10#非自身最佳匹配树  
+&ensp;&ensp;&ensp;&ensp;outfile = new blast file# 输出文件  
+
 &ensp;&ensp;&ensp;&ensp;[circle_all]# 共线性圈图  
 &ensp;&ensp;&ensp;&ensp;lens1 = lens1 file#物种1的染色体长度文件  
 &ensp;&ensp;&ensp;&ensp;lens2 = lens2 file#物种2的染色体长度文件  
@@ -108,14 +114,14 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;savefile = savefile(.png,.pdf)#支持输出.png，.pdf格式  
 ![局部共线性](https://images.gitee.com/uploads/images/2021/1016/000115_d944aba8_8074509.png "l.png")
 
-&ensp;&ensp;&ensp;&ensp;[Ks]  
+&ensp;&ensp;&ensp;&ensp;[Ks]# 多进程计算Ks  
 &ensp;&ensp;&ensp;&ensp;cds_file = 	cds file  
 &ensp;&ensp;&ensp;&ensp;pep_file = 	pep file  
 &ensp;&ensp;&ensp;&ensp;align_software = muscle#调用muscle进行多序列比对  
 &ensp;&ensp;&ensp;&ensp;pairs_file = gene pairs file#基因对文件  
 &ensp;&ensp;&ensp;&ensp;ks_file = ks result  
 
-&ensp;&ensp;&ensp;&ensp;[Ks_block]  
+&ensp;&ensp;&ensp;&ensp;[Ks_block]# 共线性同源基因块ks核密度图  
 &ensp;&ensp;&ensp;&ensp;ks = ks file#输入ks文件  
 &ensp;&ensp;&ensp;&ensp;area = 0,2.5  
 &ensp;&ensp;&ensp;&ensp;model = YN00/NG86  
