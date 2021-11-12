@@ -4,7 +4,7 @@
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/1011/190849_430d6aa7_8074509.png "famCircle.vpd.png")
 >基因组下载以及处理  
 >路线：  
->>前期处理序列比对、共线性扫描、ks计算  
+>>前期处理序列比对、比对结果过滤、共线性扫描、ks计算  
 >>hmmer 隐马尔可夫模型搜索筛选  
 >>screen tandem数量分部  
 >>主程序选择：  
@@ -91,8 +91,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;gff1 = gff1 file#物种1的gff文件  
 &ensp;&ensp;&ensp;&ensp;gff2 = gff2 file#物种2的gff文件  
 &ensp;&ensp;&ensp;&ensp;genepairs = block file#物种间共线性比对文件  
-&ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX#支持MCScanX、ColinearScan输出结果  
-&ensp;&ensp;&ensp;&ensp;radius = 0.3#圈图半径  
+&ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX#支持MCScanX、ColinearScan输出结果    
 &ensp;&ensp;&ensp;&ensp;block = 6#共线性片段最小长度  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)#输出格式  
 ![共线性块](https://images.gitee.com/uploads/images/2021/1016/000047_3cc36919_8074509.png "ca.png")
@@ -136,7 +135,6 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;ks = ks file  
 &ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5#ks范围  
 &ensp;&ensp;&ensp;&ensp;block = 6  
-&ensp;&ensp;&ensp;&ensp;radius = 0.3  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 ![共线性——ks](https://images.gitee.com/uploads/images/2021/1016/000209_bbc61706_8074509.png "c.png")
 
@@ -154,8 +152,7 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;gff = gff file  
 &ensp;&ensp;&ensp;&ensp;genepairs = block file  
 &ensp;&ensp;&ensp;&ensp;genepairsfile_type = MCScanX  
-&ensp;&ensp;&ensp;&ensp;genefamily = family file#基因家族候选序列文件  
-&ensp;&ensp;&ensp;&ensp;radius = 0.3  
+&ensp;&ensp;&ensp;&ensp;genefamily = family file#基因家族候选序列文件   
 &ensp;&ensp;&ensp;&ensp;block = 6  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 ![家族分布](https://images.gitee.com/uploads/images/2021/1016/000242_31aa7da7_8074509.png "cf.png") 
@@ -182,7 +179,6 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;file_type = WGDI/BLAST#支持WGDI、BLAST输出文件  
 &ensp;&ensp;&ensp;&ensp;genefamily = famliy file#候选基因家族成员文件  
 &ensp;&ensp;&ensp;&ensp;Ks_concern = 0,0.15#ks值范围  
-&ensp;&ensp;&ensp;&ensp;radius = 0.3  
 &ensp;&ensp;&ensp;&ensp;cluster = 16#簇间距  
 &ensp;&ensp;&ensp;&ensp;parameter = False  
 &ensp;&ensp;&ensp;&ensp;savecsv = out file (*.csv)  
@@ -197,7 +193,6 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;file_type = WGDI/BLAST#支持WGDI、BLAST输出文件  
 &ensp;&ensp;&ensp;&ensp;genefamily = famliy file#候选基因家族成员文件  
 &ensp;&ensp;&ensp;&ensp;Ks_concern = 0,0.15  
-&ensp;&ensp;&ensp;&ensp;radius = 0.3  
 &ensp;&ensp;&ensp;&ensp;cluster = 16  
 &ensp;&ensp;&ensp;&ensp;relation = False  
 &ensp;&ensp;&ensp;&ensp;savecsv = out file (*.csv)  
@@ -236,7 +231,6 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
 &ensp;&ensp;&ensp;&ensp;position = end  
 &ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
-&ensp;&ensp;&ensp;&ensp;radius = 0.3  
 &ensp;&ensp;&ensp;&ensp;outother = out other (*.txt)  
 &ensp;&ensp;&ensp;&ensp;outfile = out file (*.txt)  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)
@@ -251,7 +245,6 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
 &ensp;&ensp;&ensp;&ensp;position = end  
 &ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
-&ensp;&ensp;&ensp;&ensp;radius = 0.3  
 &ensp;&ensp;&ensp;&ensp;outother = out other (*.txt)  
 &ensp;&ensp;&ensp;&ensp;outfile = out file (*.txt)  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)   
@@ -265,7 +258,6 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;ks = ks file  
 &ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
 &ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
-&ensp;&ensp;&ensp;&ensp;radius = 0.3  
 &ensp;&ensp;&ensp;&ensp;outother = out other (*.txt)  
 &ensp;&ensp;&ensp;&ensp;outfile = out file (*.txt)  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
@@ -279,7 +271,6 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;file_type = famCircle  
 &ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
 &ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
-&ensp;&ensp;&ensp;&ensp;radius = 0.3  
 &ensp;&ensp;&ensp;&ensp;outother = out other (*.txt)  
 &ensp;&ensp;&ensp;&ensp;outfile = out file (*.txt)  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
@@ -293,7 +284,6 @@ famCircle -o total.conf
 &ensp;&ensp;&ensp;&ensp;genefamily = famliy file  
 &ensp;&ensp;&ensp;&ensp;position = end  
 &ensp;&ensp;&ensp;&ensp;Ks_concern = 0,1.5  
-&ensp;&ensp;&ensp;&ensp;radius = 0.3  
 &ensp;&ensp;&ensp;&ensp;outfile = out file (*.txt)  
 &ensp;&ensp;&ensp;&ensp;savefile = save file (*.png, *.pdf)  
 ![散在重复](https://images.gitee.com/uploads/images/2021/1016/000822_ef8b3a63_8074509.png "dsd.png")
