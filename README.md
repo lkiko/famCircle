@@ -1,7 +1,7 @@
 # famCircle 基因家族分析，tandem可视化分析
 
 ## 分析流程
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1011/190849_430d6aa7_8074509.png "famCircle.vpd.png")
+![输入图片说明](%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 >基因组下载以及处理  
 >路线：  
 >>前期处理序列比对、比对结果过滤、共线性扫描、ks计算  
@@ -40,14 +40,17 @@
 pip install xx/xx/famCircle-*.*.*.tar.gz
 pip install xx/xx/famCircle-*.*.*-py3-none-any.whl
 ```
+![本地安装](%E5%AE%89%E8%A3%85%E6%88%AA%E5%9B%BE.png)
 ### 直接通过pip安装
 &ensp;&ensp;&ensp;&ensp;命令 
 
 ```
 pip install famCircle
 ```
+![在线安装](%E5%9C%A8%E7%BA%BF%E5%AE%89%E8%A3%85%E6%88%AA%E5%9B%BE.png)
 ## 软件配置
 安装路径下/famCircle/conf.ini
+![配置文件](%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E7%BB%86.png)
 
 ```
 [ini]
@@ -65,7 +68,7 @@ pal2nal_path = ~/bin/pal2nal.pl
 #pal2nal安装路径
 ```
 ## 软件使用
-交流群![交流群号](https://images.gitee.com/uploads/images/2021/0928/123500_6eb999c4_8074509.jpeg "B5726647-A6DC-4C3E-ADF7-30720901BC51.jpeg")
+![交流群](%E4%BA%A4%E6%B5%81%E7%BE%A4.jpg)
 ### help
 
 ```
@@ -77,7 +80,35 @@ famCircle -h
 famCircle -o ? > total.conf# 覆盖
 famCircle -o ? >> total.conf# 追加
 ```
-
+### 常用文件示例
+#### gff文件
+![gff文件示例](gff.png)
+&ensp;&ensp;&ensp;&ensp;gff文件从左至右依次是    
+&ensp;&ensp;&ensp;&ensp;染色体  基因名  开始位置  结束位置  正负链  基因在染色体上的相对位置  备注    
+#### lens文件
+![lens文件](lens.png)  
+&ensp;&ensp;&ensp;&ensp;lens文件从左至右依次为    
+&ensp;&ensp;&ensp;&ensp;染色体  染色体碱基数  染色体基因数    
+#### blast文件
+![blast文件](blast.png)  
+&ensp;&ensp;&ensp;&ensp;blast文件使用常见的M8格式    
+#### cds文件和pep文件
+![cds文件](cds.png)
+![pep文件](pep.png)  
+&ensp;&ensp;&ensp;&ensp;cds文件为基因的核酸序列，pep文件为基因对应的蛋白质序列    
+&ensp;&ensp;&ensp;&ensp;两个文件均为fasta格式    
+#### 共线性文件
+![共线性文件](wgdi.png)  
+&ensp;&ensp;&ensp;&ensp;示例共线性文件为[WGDI 共线性结果](http://wgdi.readthedocs.io/en/latest/collinearity.html)格式的共线性结果文件，同时软件还兼容MCScanX的共线性扫描结果    
+#### ks文件
+![ks文件](ks.png)  
+&ensp;&ensp;&ensp;&ensp;软件兼容[WGDI ks计算结果](http://wgdi.readthedocs.io/en/latest/ks.html)，同时软件兼容自身ks计算模块的计算结果
+#### HMM(隐马尔可夫模型)文件
+![隐马尔可夫模型](hmm.png)  
+&ensp;&ensp;&ensp;&ensp;软件使用[PFAM 的基因家族隐马尔可夫模型](http://pfam.xfam.org/)  
+#### 家族文件
+![基因家族文件](family.png)  
+&ensp;&ensp;&ensp;&ensp;基因家族文件产生自本软件，初始文件只有第一列为，目标基因家族成员。再经过家族成员分类之后，手动添加第二列为颜色(不同的类别赋予不同的颜色)
 ### 功能使用 以outer为例
 
 ```
