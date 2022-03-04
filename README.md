@@ -58,9 +58,9 @@ hmmer_path = ~/bin/
 # hmm安装路径
 clustalw_path = ~/bin/clustalw
 #clustalw安装路径
-muscle_path = ~/bin/
+muscle_path = ~/bin/muscle
 #muscle安装路径
-mafft_path = ~/bin/
+mafft_path = ~/bin/mafft
 #mafft安装路径
 yn00_path = ~/bin/yn00
 #paml安装路径
