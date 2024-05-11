@@ -68,7 +68,7 @@ pal2nal_path = ~/bin/pal2nal.pl
 #pal2nal安装路径
 ```
 ## 软件使用
-![交流群](%E4%BA%A4%E6%B5%81%E7%BE%A4.jpg)
+
 ### help
 
 ```
