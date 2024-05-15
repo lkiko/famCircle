@@ -1,5 +1,7 @@
 # famCircle 基因家族分析，tandem可视化分析
 
+## At present there is no detailed manual for this application, you will simply have to play around and see what happens.
+
 ## 分析流程
 ![输入图片说明](%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 >基因组下载以及处理  
