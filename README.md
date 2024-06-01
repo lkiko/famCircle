@@ -36,7 +36,7 @@
 
 # 软件安装与使用
 ## 下载安装
-### 从PyPI:https://pypi.org/project/famCircle/ 下载安装包到本地安装
+### 从https://github.com/lkiko/famCircle/ 下载安装包到本地安装
 &ensp;&ensp;&ensp;&ensp;命令  
 ```
 pip install xx/xx/famCircle-*.*.*.tar.gz
