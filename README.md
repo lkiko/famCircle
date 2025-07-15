@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15910591.svg)](https://doi.org/10.5281/zenodo.15910591)
+
 # famCircle 基因家族分析，tandem可视化分析
 
 ## At present there is no detailed manual for this application, you will simply have to play around and see what happens.
