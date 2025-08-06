@@ -9,7 +9,7 @@ required = ['pandas', 'numpy', 'biopython', 'matplotlib', 'scipy','interval','se
 
 setup(
     name="famCircle",
-    version="0.2.6",
+    version="0.2.5",
     author="charles_kiko",
     author_email="charles_kiko@163.com",
     description="famCircle",
@@ -37,3 +37,4 @@ setup(
         'Tracker': 'https://github.com/lkiko/famCircle/issues',
     }
 )
+
