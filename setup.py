@@ -30,5 +30,10 @@ setup(
         ]
     },
     zip_safe=True,
-    install_requires=required
+    install_requires=required,
+    url='https://github.com/lkiko/famCircle',
+    project_urls={
+        'Source': 'https://github.com/lkiko/famCircle',
+        'Tracker': 'https://github.com/lkiko/famCircle/issues',
+    }
 )
