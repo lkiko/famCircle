@@ -54,7 +54,7 @@ parser = argparse.ArgumentParser(
 parser.description = '''\
 runing famCircle
     -------------------------------------- '''
-parser.add_argument("-v", "--version", action = 'version', version='0.2.6')
+parser.add_argument("-v", "--version", action = 'version', version='0.2.5')
 
 parser.add_argument("-fu", dest = "filter_unit",
                     help = "Filter blast files to keep the best match that is not self.")
